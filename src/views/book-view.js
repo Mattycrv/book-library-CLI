@@ -15,3 +15,10 @@ export function showListBooks(books) {
     console.log(`${indice + 1} - ${book.title}`);
   });
 }
+
+export function showUpdatedBook(updatedBook) {
+  console.log("✅ Livro atualizado com sucesso!");
+  console.log(`Título: ${updatedBook.title}`);
+  console.log(`Autor: ${updatedBook.author}`);
+  console.log(`Ano: ${updatedBook.year}`);
+}

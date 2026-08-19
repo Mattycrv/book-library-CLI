@@ -1,4 +1,8 @@
-import { handleAddBook, handleListBook } from "./controller/book.controller.js";
+import {
+  handleAddBook,
+  handleListBook,
+  handleUpdateBook,
+} from "./controller/book.controller.js";
 
 const command = process.argv[2];
 
@@ -18,6 +22,14 @@ switch (command) {
   }
 
   case "update-book": {
+    const id = process.argv[3];
+    const updatedData = {
+      title: process.argv[4],
+      author: process.argv[5],
+      year: process.argv[6],
+    };
+
+    handleUpdateBook(id, updatedData);
     break;
   }
 }

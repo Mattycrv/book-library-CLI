@@ -5,7 +5,12 @@ import {
   listBooks,
 } from "../services/book-service.js";
 
-import { showAddBook, showError, showListBooks } from "../views/book-view.js";
+import {
+  showAddBook,
+  showError,
+  showListBooks,
+  showUpdatedBook,
+} from "../views/book-view.js";
 
 export function handleAddBook(title, author, year) {
   try {
@@ -25,4 +30,12 @@ export function handleListBook() {
   return books;
 }
 
-export function handleUpdateBook() {}
+export function handleUpdateBook(id, updatedData) {
+  try {
+    const updatedBook = updateBook(id, updatedData);
+    showUpdatedBook(updatedBook);
+    return updatedBook;
+  } catch (error) {
+    showError(error.message);
+  }
+}
