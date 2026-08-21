@@ -9,6 +9,7 @@ import {
   showAddBook,
   showError,
   showListBooks,
+  showRemovedBook,
   showUpdatedBook,
 } from "../views/book-view.js";
 
@@ -39,3 +40,15 @@ export function handleUpdateBook(id, updatedData) {
     showError(error.message);
   }
 }
+
+export function handleRemoveBook(id) {
+  try {
+    const removedBook = removeBook(id);
+    showRemovedBook(removedBook);
+    return removedBook;
+  } catch (error) {
+    showError(error.message);
+  }
+}
+
+export function handleGetBookById(id) {}

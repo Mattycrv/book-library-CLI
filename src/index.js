@@ -1,6 +1,7 @@
 import {
   handleAddBook,
   handleListBook,
+  handleRemoveBook,
   handleUpdateBook,
 } from "./controller/book.controller.js";
 
@@ -30,6 +31,13 @@ switch (command) {
     };
 
     handleUpdateBook(id, updatedData);
+    break;
+  }
+
+  case "remove-book": {
+    const id = process.argv[3];
+
+    handleRemoveBook(id);
     break;
   }
 }

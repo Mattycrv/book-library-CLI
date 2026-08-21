@@ -22,3 +22,10 @@ export function showUpdatedBook(updatedBook) {
   console.log(`Autor: ${updatedBook.author}`);
   console.log(`Ano: ${updatedBook.year}`);
 }
+
+export function showRemovedBook(removedBook) {
+  console.log("✅ Este livro foi removido com sucesso:");
+  console.log(`Título: ${removedBook.title}`);
+  console.log(`Autor: ${removedBook.author}`);
+  console.log(`Ano: ${removedBook.year}`);
+}
