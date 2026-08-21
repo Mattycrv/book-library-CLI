@@ -3,6 +3,7 @@ import {
   updateBook,
   removeBook,
   listBooks,
+  getBookById,
 } from "../services/book-service.js";
 
 import {
@@ -51,4 +52,12 @@ export function handleRemoveBook(id) {
   }
 }
 
-export function handleGetBookById(id) {}
+export function handleGetBookById(id) {
+  try {
+    const bookFound = getBookById(id);
+
+    return bookFound;
+  } catch (error) {
+    showError(error.message);
+  }
+}
