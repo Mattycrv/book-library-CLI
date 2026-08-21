@@ -29,3 +29,10 @@ export function showRemovedBook(removedBook) {
   console.log(`Autor: ${removedBook.author}`);
   console.log(`Ano: ${removedBook.year}`);
 }
+
+export function showBookFound(BookFound) {
+  console.log("✅ Este livro foi removido com sucesso:");
+  console.log(`Título: ${BookFound.title}`);
+  console.log(`Autor: ${BookFound.author}`);
+  console.log(`Ano: ${BookFound.year}`);
+}

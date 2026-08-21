@@ -55,7 +55,7 @@ export function handleRemoveBook(id) {
 export function handleGetBookById(id) {
   try {
     const bookFound = getBookById(id);
-
+    showBookFound(BookFound);
     return bookFound;
   } catch (error) {
     showError(error.message);
