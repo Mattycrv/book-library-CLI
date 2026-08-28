@@ -1,5 +1,6 @@
 import {
   handleAddBook,
+  handleGetBookById,
   handleListBook,
   handleRemoveBook,
   handleUpdateBook,
@@ -38,6 +39,13 @@ switch (command) {
     const id = process.argv[3];
 
     handleRemoveBook(id);
+    break;
+  }
+
+  case "get-book": {
+    const id = process.argv[3];
+
+    handleGetBookById(id);
     break;
   }
 }

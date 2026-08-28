@@ -12,6 +12,7 @@ import {
   showListBooks,
   showRemovedBook,
   showUpdatedBook,
+  showBookFound,
 } from "../views/book-view.js";
 
 export function handleAddBook(title, author, year) {
@@ -53,11 +54,11 @@ export function handleRemoveBook(id) {
 }
 
 export function handleGetBookById(id) {
-  try {
-    const bookFound = getBookById(id);
-    showBookFound(BookFound);
-    return bookFound;
-  } catch (error) {
-    showError(error.message);
-  }
+  const bookFound = getBookById(id);
+
+  if (!bookFound) return showError("Livro não encontrado.");
+
+  showBookFound(BookFound);
+
+  return bookFound;
 }
