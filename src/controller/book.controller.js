@@ -58,7 +58,7 @@ export function handleGetBookById(id) {
 
   if (!bookFound) return showError("Livro não encontrado.");
 
-  showBookFound(BookFound);
+  showBookFound(bookFound);
 
   return bookFound;
 }
