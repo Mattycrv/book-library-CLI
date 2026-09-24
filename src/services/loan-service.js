@@ -46,6 +46,13 @@ export function returnBook(bookId) {
   return loanFound;
 }
 
-export function getLoanById(bookId) {}
+export function getLoanById(bookId) {
+  const loans = loadLoans();
+  const loanFound = loans.find(
+    (loan) => loan.bookId === bookId && loan.actualReturnDate === null,
+  );
+
+  return loanFound;
+}
 
 export function listLoan() {}
