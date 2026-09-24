@@ -10,7 +10,9 @@ export function borrowBook(bookId, borrower) {
     throw new Error("Livro não encontrado.");
   }
 
-  const loanFound = loans.find((loan) => loan.bookId === bookId);
+  const loanFound = loans.find(
+    (loan) => loan.bookId === bookId && loan.actualReturnDate === null,
+  );
 
   if (loanFound) {
     throw new Error("Este livro já está emprestado.");
@@ -23,7 +25,26 @@ export function borrowBook(bookId, borrower) {
   return newLoan;
 }
 
-export function returnBook(bookId) {}
+export function returnBook(bookId) {
+  const loans = loadLoans();
+  const bookFound = getBookById(bookId);
+  const loanFound = loans.find(
+    (loan) => loan.bookId === bookId && loan.actualReturnDate === null,
+  );
+
+  if (!bookFound) {
+    throw new Error("Livro não encontrado.");
+  }
+
+  if (!loanFound) {
+    throw new Error("Empréstimo não encontrado.");
+  }
+
+  loanFound.actualReturnDate = new Date().toLocaleDateString("pt-BR");
+
+  saveLoans(loans);
+  return loanFound;
+}
 
 export function getLoanById(bookId) {}
 
