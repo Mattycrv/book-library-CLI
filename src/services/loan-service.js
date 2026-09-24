@@ -55,4 +55,7 @@ export function getLoanById(bookId) {
   return loanFound;
 }
 
-export function listLoan() {}
+export function listLoan() {
+  const loans = loadLoans();
+  return loans;
+}
