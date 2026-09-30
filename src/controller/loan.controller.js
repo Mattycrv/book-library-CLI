@@ -1,7 +1,7 @@
 import { getBookById } from "../services/book-service.js";
-import { borrowBook } from "../services/loan-service.js";
+import { borrowBook, returnBook } from "../services/loan-service.js";
 import { showError } from "../views/book-view.js";
-import { showBorrowedBook } from "../views/loan-view.js";
+import { showBorrowedBook, showReturnedBook } from "../views/loan-view.js";
 
 export function handleBorrowBook(bookId, borrower) {
   try {
@@ -14,7 +14,16 @@ export function handleBorrowBook(bookId, borrower) {
   }
 }
 
-export function handleReturnBook(bookId) {}
+export function handleReturnBook(bookId) {
+  try {
+    const loanReturned = returnBook(bookId);
+    const bookFound = getBookById(loanReturned.bookId);
+    showReturnedBook(loanReturned, bookFound);
+    return loanReturned;
+  } catch (error) {
+    showError(error.message);
+  }
+}
 
 export function handleGetLoanById(bookId) {}
 
