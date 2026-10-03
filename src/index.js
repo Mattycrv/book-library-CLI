@@ -5,6 +5,10 @@ import {
   handleRemoveBook,
   handleUpdateBook,
 } from "./controller/book.controller.js";
+import {
+  handleBorrowBook,
+  handleReturnBook,
+} from "./controller/loan.controller.js";
 
 const command = process.argv[2];
 
@@ -46,6 +50,21 @@ switch (command) {
     const id = process.argv[3];
 
     handleGetBookById(id);
+    break;
+  }
+
+  case "borrow-book": {
+    const id = process.argv[3];
+    const borrower = process.argv[4];
+
+    handleBorrowBook(id, borrower);
+    break;
+  }
+
+  case "return-book": {
+    const id = process.argv[3];
+
+    handleReturnBook(id);
     break;
   }
 }
