@@ -1,15 +1,16 @@
-import { loadBooks, saveBooks } from "./storage.service.js";
+import { loadBooks } from "./storage.service.js";
 
 export function searchByTitle(title) {
   const books = loadBooks();
-  const searchTerm = books.filter((searchTitle) => {
-    return searchTitle.toLowerCase() == title.toLowerCase();
+  const booksFound = books.filter((book) => {
+    return book.title.toLowerCase().includes(title.toLowerCase());
   });
 
-  if (!searchTerm) throw new Error("Nenhum livro encontrado.");
+  if (booksFound === 0) {
+    throw new Error("Nenhum livro encontrado.");
+  }
 
-  saveBooks(searchTerm);
-  return searchTerm;
+  return booksFound;
 }
 
 export function searchByAuthor(author) {}
