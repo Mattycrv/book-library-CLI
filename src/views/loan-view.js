@@ -14,3 +14,11 @@ export function showReturnedBook(loan, book) {
   console.log(`Data prevista de retorno: ${loan.expectedReturnDate}`);
   console.log(`Data da devolução efetiva: ${loan.actualReturnDate}`);
 }
+
+export function showLoanFound(loan, book) {
+  console.log("✅ Empréstimo encontrado:");
+  console.log(`Título: ${book.title}`);
+  console.log(`Mutuário: ${loan.borrower}`);
+  console.log(`Data de locação: ${loan.rentedDate}`);
+  console.log(`Data prevista de retorno: ${loan.expectedReturnDate}`);
+}

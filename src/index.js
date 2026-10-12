@@ -53,7 +53,7 @@ switch (command) {
     break;
   }
 
-  case "borrow-book": {
+  case "borrow": {
     const id = process.argv[3];
     const borrower = process.argv[4];
 
@@ -61,7 +61,7 @@ switch (command) {
     break;
   }
 
-  case "return-book": {
+  case "return": {
     const id = process.argv[3];
 
     handleReturnBook(id);

@@ -1,7 +1,15 @@
 import { getBookById } from "../services/book-service.js";
-import { borrowBook, returnBook } from "../services/loan-service.js";
+import {
+  borrowBook,
+  getLoanById,
+  returnBook,
+} from "../services/loan-service.js";
 import { showError } from "../views/book-view.js";
-import { showBorrowedBook, showReturnedBook } from "../views/loan-view.js";
+import {
+  showBorrowedBook,
+  showLoanFound,
+  showReturnedBook,
+} from "../views/loan-view.js";
 
 export function handleBorrowBook(bookId, borrower) {
   try {
@@ -25,6 +33,13 @@ export function handleReturnBook(bookId) {
   }
 }
 
-export function handleGetLoanById(bookId) {}
+export function handleGetLoanById(bookId) {
+  const loanFound = getLoanById(bookId);
+
+  if (!loanFound) return showError("Empréstimo não encontrado.");
+
+  showLoanFound(loanFound, bookId);
+  return loanFound;
+}
 
 export function handleListLoans() {}

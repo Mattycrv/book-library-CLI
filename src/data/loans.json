@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "b88e3469-7edd-456c-8ea8-0adbf5a3fb85",
+    "bookId": "947d25c3-6609-449d-94c3-00201331bc35",
+    "borrower": "Mateus",
+    "rentedDate": "12/10/2026",
+    "expectedReturnDate": "19/10/2026",
+    "actualReturnDate": "12/10/2026"
+  },
+  {
+    "id": "51219c6c-e732-4d84-81e6-a5f1db22a177",
+    "bookId": "947d25c3-6609-449d-94c3-00201331bc35",
+    "borrower": "Mateus",
+    "rentedDate": "12/10/2026",
+    "expectedReturnDate": "19/10/2026",
+    "actualReturnDate": null
+  }
+]
