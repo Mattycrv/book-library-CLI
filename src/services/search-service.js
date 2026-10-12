@@ -6,6 +6,8 @@ export function searchByTitle(title) {
     return searchTitle.toLowerCase() == title.toLowerCase();
   });
 
+  if (!searchTerm) throw new Error("Nenhum livro encontrado.");
+
   saveBooks(searchTerm);
   return searchTerm;
 }
