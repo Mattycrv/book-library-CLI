@@ -1,4 +1,4 @@
-export function showSearchByTitle(books) {
+export function showSearchBook(books) {
   books.forEach((book) => {
     console.log("✅ Livro encontrado:");
     console.log(`Título: ${book.title}`);

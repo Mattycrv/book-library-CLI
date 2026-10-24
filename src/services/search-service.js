@@ -13,6 +13,17 @@ export function searchByTitle(title) {
   return booksFound;
 }
 
-export function searchByAuthor(author) {}
+export function searchByAuthor(author) {
+  const books = loadBooks();
+  const booksFound = books.filter((book) => {
+    return book.author.toLowerCase().includes(author.toLowerCase());
+  });
+
+  if (booksFound.length === 0) {
+    throw new Error("Nenhum livro encontrado.");
+  }
+
+  return booksFound;
+}
 
 export function searchBooks(term) {}

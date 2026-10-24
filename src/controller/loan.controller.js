@@ -4,7 +4,7 @@ import {
   getLoanById,
   returnBook,
 } from "../services/loan-service.js";
-import { loadBooks, loadLoans } from "../services/storage.service.js";
+import { loadLoans } from "../services/storage.service.js";
 import { showError } from "../views/book-view.js";
 import {
   showBorrowedBook,

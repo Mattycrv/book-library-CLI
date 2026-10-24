@@ -10,7 +10,10 @@ import {
   handleListLoans,
   handleReturnBook,
 } from "./controller/loan.controller.js";
-import { handleSearchByTitle } from "./controller/search.controller.js";
+import {
+  handleSearchByAuthor,
+  handleSearchByTitle,
+} from "./controller/search.controller.js";
 
 const command = process.argv[2];
 
@@ -79,6 +82,13 @@ switch (command) {
 
   case "list-loans": {
     handleListLoans();
+    break;
+  }
+
+  case "searchByAuthor": {
+    const author = process.argv[3];
+
+    handleSearchByAuthor(author);
     break;
   }
 }
