@@ -4,11 +4,13 @@ import {
   getLoanById,
   returnBook,
 } from "../services/loan-service.js";
+import { loadBooks, loadLoans } from "../services/storage.service.js";
 import { showError } from "../views/book-view.js";
 import {
   showBorrowedBook,
   showLoanFound,
   showReturnedBook,
+  showLoans,
 } from "../views/loan-view.js";
 
 export function handleBorrowBook(bookId, borrower) {
@@ -42,4 +44,8 @@ export function handleGetLoanById(bookId) {
   return loanFound;
 }
 
-export function handleListLoans() {}
+export function handleListLoans() {
+  const loans = loadLoans();
+  showLoans(loans);
+  return loans;
+}

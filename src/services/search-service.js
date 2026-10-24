@@ -6,7 +6,7 @@ export function searchByTitle(title) {
     return book.title.toLowerCase().includes(title.toLowerCase());
   });
 
-  if (booksFound === 0) {
+  if (booksFound.length === 0) {
     throw new Error("Nenhum livro encontrado.");
   }
 

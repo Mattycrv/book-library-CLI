@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": "947d25c3-6609-449d-94c3-00201331bc35",
+    "title": "Clean Code",
+    "author": "Teste",
+    "year": "2000",
+    "available": true
+  }
+]
