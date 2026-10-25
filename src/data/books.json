@@ -5,5 +5,26 @@
     "author": "Teste",
     "year": "2000",
     "available": true
+  },
+  {
+    "id": "87ebc374-75a2-4885-af87-2c12b56419aa",
+    "title": "Harry Potter e o Cálice de Fogo",
+    "author": "J.K. Rowling",
+    "year": "2000",
+    "available": true
+  },
+  {
+    "id": "392ef003-6e57-4982-9ebb-6cf83dc412bb",
+    "title": "Cryptonomicon",
+    "author": "Neal Stephenson",
+    "year": "2000",
+    "available": true
+  },
+  {
+    "id": "31023543-c8c6-45d1-94c6-5d435a459439",
+    "title": "Harry Potter e o Enigma do Príncipe",
+    "author": "J. K. Rowling",
+    "year": "2005",
+    "available": true
   }
 ]

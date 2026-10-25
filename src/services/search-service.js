@@ -26,4 +26,19 @@ export function searchByAuthor(author) {
   return booksFound;
 }
 
-export function searchBooks(term) {}
+export function searchBooks(term) {
+  const books = loadBooks();
+  const booksFound = books.filter((book) => {
+    return (
+      book.title.toLowerCase().includes(term.toLowerCase()) ||
+      book.author.toLowerCase().includes(term.toLowerCase()) ||
+      book.year.toLowerCase().includes(term.toLowerCase())
+    );
+  });
+
+  if (booksFound.length === 0) {
+    throw new Error("Nenhum livro encontrado.");
+  }
+
+  return booksFound;
+}

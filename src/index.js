@@ -11,6 +11,7 @@ import {
   handleReturnBook,
 } from "./controller/loan.controller.js";
 import {
+  handleSearchBooks,
   handleSearchByAuthor,
   handleSearchByTitle,
 } from "./controller/search.controller.js";
@@ -89,6 +90,17 @@ switch (command) {
     const author = process.argv[3];
 
     handleSearchByAuthor(author);
+    break;
+  }
+
+  case "searchByTerm": {
+    const term = process.argv[3];
+
+    handleSearchBooks(term);
+    break;
+  }
+
+  default: {
     break;
   }
 }

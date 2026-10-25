@@ -1,13 +1,16 @@
-import { searchByAuthor, searchByTitle } from "../services/search-service.js";
-import { loadBooks } from "../services/storage.service.js";
+import {
+  searchBooks,
+  searchByAuthor,
+  searchByTitle,
+} from "../services/search-service.js";
 import { showError } from "../views/book-view.js";
 import { showSearchBook } from "../views/search.view.js";
 
 export function handleSearchByTitle(title) {
   try {
-    const bookFoundByTitle = searchByTitle(title);
-    showSearchBook(bookFoundByTitle);
-    return bookFoundByTitle;
+    const booksFoundByTitle = searchByTitle(title);
+    showSearchBook(booksFoundByTitle);
+    return booksFoundByTitle;
   } catch (error) {
     showError(error.message);
   }
@@ -15,12 +18,20 @@ export function handleSearchByTitle(title) {
 
 export function handleSearchByAuthor(author) {
   try {
-    const bookFoundByAuthor = searchByAuthor(author);
-    showSearchBook(bookFoundByAuthor);
-    return bookFoundByAuthor;
+    const booksFoundByAuthor = searchByAuthor(author);
+    showSearchBook(booksFoundByAuthor);
+    return booksFoundByAuthor;
   } catch (error) {
     showError(error.message);
   }
 }
 
-export function handleSearchBooks(term) {}
+export function handleSearchBooks(term) {
+  try {
+    const booksFoundByTerm = searchBooks(term);
+    showSearchBook(booksFoundByTerm);
+    return booksFoundByTerm;
+  } catch (error) {
+    showError(error.message);
+  }
+}
